@@ -1,0 +1,37 @@
+﻿<Window x:Class="minesweeper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="BG's Awesome Minesweeper" Height="750" Width="800"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:minesweeper"
+        mc:Ignorable="d"
+        >
+    <Window.Resources>
+        <Image x:Key="Smile" Source=".\smile.png" Height="50" Width="50" />
+        <Image x:Key="Cry" Source=".\cry.png" Height="50" Width="50"/>
+        <Image x:Key="Cool" Source=".\Cool.jpg" Height="50" Width="50"/>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="383*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="MineCounter" Content="0" FontFamily="Ceria Lebaran" FontSize="25" Margin="270,68,415,592.5" Grid.RowSpan="2"/>
+        <Label x:Name="TimerLabel" Content="0" FontFamily="Ceria Lebaran" FontSize="25" Margin="430,68,240,592.5" Grid.RowSpan="2"/>
+        <Label Content="Minesweeper" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" FontFamily="Ceria Lebaran" FontSize="16" Margin="337,12,0,0"/>
+        <Button Name="Play" HorizontalAlignment="Left" Height="60" Margin="330,68,0,0" VerticalAlignment="Top" Width="70" FontFamily="Ceria Lebaran" FontSize="15" Click="Button_Click" RenderTransformOrigin="0.929,0.5" Grid.RowSpan="2">
+            <!--<Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="Play" Property="Background" Value="{StaticResource warning}" />
+            </Trigger> -->
+
+            <DynamicResource ResourceKey="Smile"/>
+        </Button>
+        <Grid x:Name="sceneGrid" Height="542" Margin="15,79.5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="715">
+
+        </Grid>
+    </Grid>
+</Window>
